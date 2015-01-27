@@ -16,7 +16,7 @@ public class DriveTrain extends Subsystem {
 	
 	public static boolean ReverseDrive = false;
 	
-	public static DriveTrain getInstance()
+  public static DriveTrain getInstance()
     {
         if(instance == null)
             instance = new DriveTrain();
