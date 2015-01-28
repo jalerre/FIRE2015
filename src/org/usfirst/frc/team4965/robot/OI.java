@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Joystick;
  */
 public class OI {
 	Joystick controller = new Joystick(0);
+  Joystick controller = new joystick(1);
     //Joystick controllerTwo = new Joystick(2);
     
     public double leftStickY()

@@ -4,6 +4,9 @@ import org.usfirst.frc.team4965.robot.RobotMap;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Jaguar;
+import edu.wpi.first.wpilib.Encoder;
+import edu.wpi.first.wpilib.Victor;
+
 import org.usfirst.frc.team4965.robot.commands.JoystickDrive;
 
 /**
@@ -13,6 +16,8 @@ public class DriveTrain extends Subsystem {
     
 	public static DriveTrain instance;
 	RobotDrive drive;
+  Encoder enc; 
+  Victor krum;
 	
 	public static boolean ReverseDrive = false;
 	
@@ -31,8 +36,16 @@ public class DriveTrain extends Subsystem {
                                     new Jaguar(RobotMap.RightFront), new Jaguar(RobotMap.RightBack));
         drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
         drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+      
+        enc = new Encoder(RobotMap.EncoderOne_A, RobotMap.EncoderOne_B);
+      
+        krum = new Victor(RobotMap.TestVictor);
     }
 	
+    public int getEncoder()
+    {
+      return enc.get();
+    }
 
     public void initDefaultCommand() 
     {
