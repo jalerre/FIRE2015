@@ -46,6 +46,16 @@ public class DriveTrain extends Subsystem {
     {
       return enc.get();
     }
+  
+    public void runVictor()
+    {
+      krum.set(.5);
+    }
+  
+    public void stopVictor()
+    {
+      krum.set(0);
+    }
 
     public void initDefaultCommand() 
     {

@@ -9,9 +9,15 @@ import edu.wpi.first.wpilibj.Joystick;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-	Joystick controller = new Joystick(0);
-  Joystick controller = new joystick(1);
-    //Joystick controllerTwo = new Joystick(2);
+	Joystick controller = new Joystick(1);
+  Joystick controllerTwo = new joystick(2);
+   
+  Button btnOne = new JoystickButton(controller, 1);
+  
+  public OI()
+  {
+    btnOne.whileHeld(new SpinVictor);
+  }
     
     public double leftStickY()
     {
